@@ -1,0 +1,22 @@
+###########################################
+### INSTRUCCIONS PASSA BANDA SALLEN-KEY ###
+###########################################
+
+- Imprescindible tenir instal·lats els mòduls següents:
+	-Random
+	-Math
+	-PIL
+	-Base64
+
+- Per crear un fitxer XML amb els problemes triats, executi el programa Passa_banda_Sallen_Key.py
+
+- Per utilitzar el programa, descarregui tota la carpeta
+
+- Quan s'executa el programa, es mostra per pantalla la imatge del circuit electrònic
+
+- El programa anirà mostrant per pantalla els passos a seguir per generar els problemes
+
+- El fitxer XML que es genera es guarda dins de la carpeta descarregada
+
+- Cada vegada que s'executi el programa, esborri el fitxer XML contingut dins la carpeta
+
