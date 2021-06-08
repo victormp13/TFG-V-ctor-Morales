@@ -88,27 +88,27 @@ while(repetir==True):
 
     for i in range (permutacions):
         #Generació dels valors de les resistències
-        R1=r.randrange(2,7,1)
+        C1=r.randrange(2,7,1)
 
         #Càlcul de la freqüencia angular natural ,el mòdul del guany i la funcio de transferencia
-        freqangular="1/"+str(round(math.sqrt(R1),3))+"RC"
-        amortiment=str(2*R1+1)+'-A/'+str(round(math.sqrt(R1)*2,3))
-        funciobona='H(s)='+str(R1)+'A(srC)^2'+'/'+'('+str(R1)+'(sRC)^2+('+str(2*R1+1)+'-A)sRC+1)'
+        freqangular="1/"+str(round(math.sqrt(C1),3))+"RC"
+        amortiment='('+str(C1+2)+'-A)/'+str(round(math.sqrt(C1)*2,3))
+        funciobona='H(s)='+str(C1)+'A(srC)^2'+'/'+'('+str(C1)+'(sRC)^2+('+str(C1+2)+'-A)sRC+1)'
 
         #Generació de les respostes errònies
         freqangulardolenta1="1/(RC)"
-        freqangulardolenta2="1/"+str(round(math.sqrt(R1)/2,3))+"RC"
-        freqangulardolenta3="1/"+str(R1)+"RC"
+        freqangulardolenta2="1/"+str(round(math.sqrt(C1)/2,3))+"RC"
+        freqangulardolenta3="1/"+str(C1)+"RC"
         freqangulardolenta4="0.5/(RC)"
-        amortimentdolent1=str(R1+1)+'-A/'+str(round(math.sqrt(R1)*2,3))
-        amortimentdolent2=str(2*R1)+'-A/'+str(round(math.sqrt(R1)*2,3))
-        amortimentdolent3=str(2*R1+1)+'-A/'+str(round(math.sqrt(R1),3))
-        amortimentdolent4=str(R1)+'-A/'+str(round(math.sqrt(R1)*2,3))
+        amortimentdolent1='('+str(C1+1)+'-A)/'+str(round(math.sqrt(C1)*2,3))
+        amortimentdolent2='('+str(2*C1+1)+'-A)/'+str(round(math.sqrt(C1)*2,3))
+        amortimentdolent3='('+str(C1+2)+'-A)/'+str(round(math.sqrt(C1),3))
+        amortimentdolent4='('+str(C1)+'-A)/'+str(round(math.sqrt(C1)*2,3))
         
-        funciodolenta1='H(s)=A(srC)^2'+'/'+'('+str(R1)+'(sRC)^2+('+str(2*R1+1)+'-A)sRC+1)'
-        funciodolenta2='H(s)='+str(R1)+'A(srC)^2'+'/'+'('+str(R1)+'(sRC)^2+('+str(2*R1)+'-A)sRC+1)'
-        funciodolenta3='H(s)='+str(R1)+'A(srC)^2'+'/'+'('+str(R1)+'(sRC)^2+('+str(R1+1)+'-A)sRC+1)'
-        funciodolenta4='H(s)='+str(R1)+'A(srC)^2'+'/'+'('+str(R1/2)+'(sRC)^2+('+str(2*R1+1)+'-A)sRC+1)'
+        funciodolenta1='H(s)=A(srC)^2'+'/'+'('+str(C1)+'(sRC)^2+('+str(C1+2)+'-A)sRC+1)'
+        funciodolenta2='H(s)='+str(C1)+'A(srC)^2'+'/'+'('+str(C1)+'(sRC)^2+('+str(2*C1+2)+'-A)sRC+1)'
+        funciodolenta3='H(s)='+str(C1)+'A(srC)^2'+'/'+'('+str(C1)+'(sRC)^2+('+str(C1+1)+'-A)sRC+1)'
+        funciodolenta4='H(s)='+str(C1)+'A(srC)^2'+'/'+'('+str(C1/2)+'(sRC)^2+('+str(C1+2)+'-A)sRC+1)'
 
         #Generació dels tipus de filtres
         tipusfiltrebo="Passa alta d'ordre 2"
@@ -147,7 +147,7 @@ while(repetir==True):
             respostadolenta4=str(freqangulardolenta4)
 
         #Es crea l'enunciat del fitxer XML
-        enunciat_xml="El circuit de la figura és un filtre actiu amb arquitectura de Sallen-Key simplificada, que presenta una funció de transferencia H(s) com la indicada al costat de la figura. Les admitàncies Y1 i Y3 corresponen a dos condensadors de capacitat C. Les admitàncies Y2 i Y4 corresponen a dues resistències de valors "+str(R1)+"R i R respectivament. El valor del guany de l'amplificador és A." 
+        enunciat_xml="El circuit de la figura és un filtre actiu amb arquitectura de Sallen-Key simplificada, que presenta una funció de transferencia H(s) com la indicada al costat de la figura. Les admitàncies Y1 i Y3 corresponen a dos condensadors de capacitats "+str(C1)+"C i C respectivament. Les admitàncies Y2 i Y4 corresponen a dues resistències de valor R. El valor del guany de l'amplificador és A." 
         if tipus==3:
             enunciat_xml+=" Calcula la freqüència angular natural"
         elif tipus==2:
@@ -158,7 +158,7 @@ while(repetir==True):
             enunciat_xml+=" Determina la funció de transferència del filtre."
 
         #Es mostren per pantalla els valors aleatoris generats i les respostes
-        enunciat_py="El valor de la resistència és R1: "+str(R1)+"C\n"
+        enunciat_py="El valor del condensador és C1: "+str(C1)+"C\n"
         if tipus==3:
             enunciat_py+="La freqüència angular natural del filtre és "+respostabona
         elif tipus==2:

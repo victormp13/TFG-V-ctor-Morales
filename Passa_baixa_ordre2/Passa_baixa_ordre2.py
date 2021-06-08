@@ -92,7 +92,7 @@ while(repetir==True):
 
         #Càlcul de la freqüencia angular natural ,el mòdul del guany i la funcio de transferencia
         freqangular="1/"+str(round(math.sqrt(C2),3))+"RC"
-        amortiment=str(2*C2+1)+'-A/'+str(round(math.sqrt(C2)*2,3))
+        amortiment='('+str(2*C2+1)+'-A)/'+str(round(math.sqrt(C2)*2,3))
         funciobona='H(s)=A'+'/'+'('+str(C2)+'(sRC)^2+('+str(2*C2+1)+'-A)sRC+1)'
 
         #Generació de les respostes errònies
@@ -100,10 +100,10 @@ while(repetir==True):
         freqangulardolenta2="1/"+str(round(math.sqrt(C2)/2,3))+"RC"
         freqangulardolenta3="1/"+str(C2)+"RC"
         freqangulardolenta4="0.5/(RC)"
-        amortimentdolent1=str(C2+1)+'-A/'+str(round(math.sqrt(C2)*2,3))
-        amortimentdolent2=str(2*C2)+'-A/'+str(round(math.sqrt(C2)*2,3))
-        amortimentdolent3=str(2*C2+1)+'-A/'+str(round(math.sqrt(C2),3))
-        amortimentdolent4=str(C2)+'-A/'+str(round(math.sqrt(C2)*2,3))
+        amortimentdolent1='('+str(C2+1)+'-A)/'+str(round(math.sqrt(C2)*2,3))
+        amortimentdolent2='('+str(2*C2)+'-A)/'+str(round(math.sqrt(C2)*2,3))
+        amortimentdolent3='('+str(2*C2+1)+'-A)/'+str(round(math.sqrt(C2),3))
+        amortimentdolent4='('+str(C2)+'-A)/'+str(round(math.sqrt(C2)*2,3))
         
         funciodolenta1='H(s)=A'+'/'+'('+str(C2)+'(sRC)^2+('+str(C2+1)+'-A)sRC+1)'
         funciodolenta2='H(s)=A'+'/'+'('+str(C2/2)+'(sRC)^2+('+str(2*C2+1)+'-A)sRC+1)'
